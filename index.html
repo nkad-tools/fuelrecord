@@ -1,23 +1,213 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>サイト準備中</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 50px 20px;
-      color: #333;
-      background-color: #f9f9f9;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>サポート｜給油記録</title>
+<meta name="description" content="iOSアプリ「給油記録」のサポートページです。お問い合わせ先とよくある質問をまとめています。">
+<style>
+  :root {
+    --bg: #f5f7fc;
+    --surface: #ffffff;
+    --text: #1c2440;
+    --muted: #5d6a8c;
+    --line: #e2e7f3;
+    --accent: #2f66d8;
+    --accent-text: #ffffff;
+    --band-1: #dfeaff;
+    --band-2: #efe8ff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151f;
+      --surface: #1a1f2e;
+      --text: #e8ecf8;
+      --muted: #9aa5c4;
+      --line: #2a3145;
+      --accent: #7aa2ff;
+      --accent-text: #10172b;
+      --band-1: #1d2742;
+      --band-2: #2a2342;
     }
-    h1 { font-size: 24px; margin-bottom: 10px; }
-    p { font-size: 16px; color: #666; }
-  </style>
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic",
+                 "Noto Sans JP", "Meiryo", sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .band {
+    background: linear-gradient(135deg, var(--band-1), var(--band-2));
+    padding: 56px 20px 48px;
+  }
+  .band-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .app-name {
+    margin: 0 0 6px;
+    font-size: 14px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  h1 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1.35;
+    font-weight: 700;
+  }
+
+  main {
+    max-width: 720px;
+    margin: -24px auto 0;
+    padding: 0 20px 64px;
+  }
+  .sheet {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 32px 32px 40px;
+  }
+
+  .lead { margin: 0 0 8px; }
+
+  section {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 700;
+  }
+  p { margin: 0 0 12px; }
+  p:last-child { margin-bottom: 0; }
+
+  ul.checklist {
+    margin: 0 0 16px;
+    padding-left: 1.4em;
+  }
+  ul.checklist li { margin-bottom: 2px; }
+
+  .mail-button {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--accent-text);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .mail-button:hover { filter: brightness(1.06); }
+  .mail-address { margin-top: 12px; color: var(--muted); font-size: 14px; }
+
+  /* よくある質問 */
+  details {
+    border-top: 1px solid var(--line);
+    padding: 4px 0;
+  }
+  details:last-of-type { border-bottom: 1px solid var(--line); }
+  summary {
+    cursor: pointer;
+    padding: 12px 28px 12px 0;
+    font-weight: 700;
+    list-style: none;
+    position: relative;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "＋";
+    position: absolute;
+    right: 0;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  details[open] summary::after { content: "－"; }
+  details p { padding: 0 0 12px; color: var(--text); }
+
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a.mail-button { color: var(--accent-text); text-decoration: none; }
+  a:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 520px) {
+    .band { padding: 40px 16px 40px; }
+    h1 { font-size: 26px; }
+    main { padding: 0 12px 48px; }
+    .sheet { padding: 24px 20px 32px; }
+  }
+</style>
 </head>
 <body>
-  <h1>現在リニューアル準備中です-3</h1>
-  <p>公開まで今しばらくお待ちください。</p>
+
+<header class="band">
+  <div class="band-inner">
+    <p class="app-name">給油記録</p>
+    <h1>サポート</h1>
+  </div>
+</header>
+
+<main>
+  <article class="sheet">
+    <p class="lead">iOSアプリ「給油記録」のサポートページです。使い方で困ったことや、不具合、ご要望がありましたら、下記のメールアドレスまでご連絡ください。</p>
+
+    <section>
+      <h2>お問い合わせ</h2>
+      <p>不具合のご連絡では、次の情報を添えていただけると、原因を調べやすくなります。</p>
+      <ul class="checklist">
+        <li>お使いのiPhoneの機種とiOSのバージョン</li>
+        <li>アプリのバージョン</li>
+        <li>起きたことと、そのときの操作</li>
+      </ul>
+      <p><a class="mail-button" href="mailto:nkad.tools@gmail.com?subject=%E3%80%90%E7%B5%A6%E6%B2%B9%E8%A8%98%E9%8C%B2%E3%80%91%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">メールで問い合わせる</a></p>
+      <p class="mail-address">nkad.tools@gmail.com</p>
+      <p>お返事までお時間をいただく場合があります。あらかじめご了承ください。</p>
+    </section>
+
+    <section>
+      <h2>よくある質問</h2>
+
+      <details>
+        <summary>入力したデータはどこに保存されますか？</summary>
+        <p>給油記録や車両情報は、お使いのiPhoneの中にだけ保存されます。開発者のサーバーには送信されません。詳しくは<a href="privacy-policy.html">プライバシーポリシー</a>をご覧ください。</p>
+      </details>
+
+      <details>
+        <summary>機種変更のときに、データを引き継げますか？</summary>
+        <p>設定画面の「給油データをCSVエクスポート」で、記録をファイルに保存できます。新しい端末では、「給油データをCSVインポート」で読み込めます。なお、CSVインポートはPro版の機能です。</p>
+      </details>
+
+      <details>
+        <summary>Pro版では何ができますか？</summary>
+        <p>複数の車両の登録、詳細な分析（走行距離・給油量・金額のグラフと年別の集計）、CSVインポートが使えます。一度のご購入で、ずっとお使いいただけます。月額や年額の料金はありません。</p>
+      </details>
+
+      <details>
+        <summary>Pro版を購入したのに、反映されません。</summary>
+        <p>設定画面の「購入を復元」をお試しください。機種変更や再インストールのあとも、同じApple IDであれば、この操作でPro版が戻ります。それでも直らないときは、お問い合わせください。</p>
+      </details>
+
+      <details>
+        <summary>CSVインポートで、記録を追加するのと上書きするのは何が違いますか？</summary>
+        <p>「追加」は、選んでいる車両の今ある記録を残したまま、CSVの記録を足します。すでにある記録と重複する行は、取り込まれないことがあります。「上書き」は、選んでいる車両の今ある記録をすべて削除してから、CSVの記録を読み込みます。上書きは元に戻せません。迷うときは、先にCSVエクスポートで今の記録を保存しておくと安心です。</p>
+      </details>
+    </section>
+  </article>
+</main>
+
 </body>
 </html>
