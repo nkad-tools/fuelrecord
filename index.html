@@ -47,11 +47,14 @@
 
   .band {
     background: linear-gradient(135deg, var(--band-1), var(--band-2));
-    padding: 56px 20px 48px;
+    padding: 40px 20px 48px;
   }
   .band-inner {
     max-width: 720px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
   }
   .app-name {
     margin: 0 0 6px;
@@ -64,6 +67,17 @@
     font-size: 30px;
     line-height: 1.35;
     font-weight: 700;
+  }
+  .header-nav {
+    margin-bottom: 4px;
+  }
+  .header-nav a {
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .header-nav a:hover {
+    text-decoration: underline;
   }
 
   main {
@@ -144,8 +158,19 @@
     border-radius: 3px;
   }
 
+  footer {
+    text-align: right;
+    margin-top: 32px;
+    font-size: 14px;
+  }
+
   @media (max-width: 520px) {
-    .band { padding: 40px 16px 40px; }
+    .band { padding: 32px 16px 36px; }
+    .band-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
     h1 { font-size: 26px; }
     main { padding: 0 12px 48px; }
     .sheet { padding: 24px 20px 32px; }
@@ -156,8 +181,13 @@
 
 <header class="band">
   <div class="band-inner">
-    <p class="app-name">給油記録</p>
-    <h1>サポート</h1>
+    <div>
+      <p class="app-name">給油記録</p>
+      <h1>サポート</h1>
+    </div>
+    <nav class="header-nav">
+      <a href="privacy-policy.html">プライバシーポリシー</a>
+    </nav>
   </div>
 </header>
 
@@ -206,6 +236,10 @@
         <p>「追加」は、選んでいる車両の今ある記録を残したまま、CSVの記録を足します。すでにある記録と重複する行は、取り込まれないことがあります。「上書き」は、選んでいる車両の今ある記録をすべて削除してから、CSVの記録を読み込みます。上書きは元に戻せません。迷うときは、先にCSVエクスポートで今の記録を保存しておくと安心です。</p>
       </details>
     </section>
+
+    <footer>
+      <a href="privacy-policy.html">プライバシーポリシー</a>
+    </footer>
   </article>
 </main>
 
